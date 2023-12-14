@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,9 +23,11 @@ public class Article {
     @Column(name = "id")
     private Long id;
 
+    @NotBlank(message = "Title cannot be blank.")
     @Column(name = "title", nullable = false)
     private String title;
 
+    @NotBlank(message = "Body cannot be blank.")
     @Column(name = "body", nullable = false)
     private String body;
 }
