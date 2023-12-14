@@ -50,7 +50,7 @@ public class ArticleServiceImp implements ArticleService {
 
     static Article unwrapArticle(Optional<Article> article, Long id) {
         if (article.isPresent()) return article.get();
-        throw new EntityNotFoundException(id, null);
+        throw new EntityNotFoundException(id, Article.class);
     }
 
 }
